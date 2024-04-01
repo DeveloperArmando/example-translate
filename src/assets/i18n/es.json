@@ -1,6 +1,0 @@
-{
-  "hello": "¡Hola, Mundo!",
-  "demo.heading": "Encabezado de demostración",
-  "demo.text": "Este tutorial explica cómo puedes traducir fácilmente tu aplicación Angular.",
-  "demo.greeting": "Hola, {{name}}!"
-}

@@ -1,36 +1,42 @@
 import { Component } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'test-translate';
-  nombreMio = "Armando";
+  nombreMio = 'Armando';
+  lang: string | undefined = 'en';
   constructor(private translate: TranslateService) {
-    const lang = translate.getBrowserLang();
-    // const lang = translate.getBrowserCultureLang();
-    if (lang) {
-      console.log('Language detected ->', lang);
-      translate.setDefaultLang(lang);
-      translate.use(lang);
+    translate.setDefaultLang('en');
+    this.lang = translate.getBrowserCultureLang();
+    console.log('Language initial detected: ', this.lang);
 
-      translate.get('demo.greeting', {name: 'John'}).subscribe((res: string) => {
-        console.log(res);
-      });
+    if (!this.lang) {
+      console.error('Language not detected');
+      this.lang = 'en';
+    }
+    if (this.lang === 'es-419') {
+      console.log('Language es-419 changing to es-MX');
+      this.lang = 'es-MX';
     }
 
-    translate.get('demo.greeting', {name: 'John'}).subscribe((res: string) => {
-      console.log(res);
-    });
+    console.log('Language to use: ', this.lang);
+    this.useLanguage(this.lang);
 
-    console.log(translate.instant('demo.greeting', {name: 'John'}));
+    translate
+      .get('demo.greeting', { name: 'Armando' })
+      .subscribe((res: string) => {
+        console.log(res);
+      });
+
+    console.log(translate.instant('demo.greeting', { name: 'Developer' }));
   }
 
   useLanguage(language: string): void {
     this.translate.use(language);
-}
-
+  }
 }

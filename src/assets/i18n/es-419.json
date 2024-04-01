@@ -1,6 +1,0 @@
-{
-  "hello": "CDMX ola, Mundo!",
-  "demo.heading": "CDMX Encabezado de demostración",
-  "demo.text": "CDMX Este tutorial explica cómo puedes traducir fácilmente tu aplicación Angular.",
-  "demo.greeting": "CDMX Hola, {{name}}!"
-}
