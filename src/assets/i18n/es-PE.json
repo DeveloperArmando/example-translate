@@ -1,0 +1,7 @@
+{
+	"demo.greeting": "¡Saludo {{name}}!",
+	"demo.heading": "Rúbrica Demo",
+	"demo.text": "Este tutorial explica cómo puedes traducir fácilmente tu aplicación Angular.",
+	"hello": "¡Hola, mundo!",
+	"test": "Prueba"
+}

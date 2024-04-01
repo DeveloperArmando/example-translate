@@ -1,8 +1,4 @@
 <div>
-  <h1>Translation demo</h1>
-  <p>This is a simple demonstration app for ngx-translate</p>
-</div>
-<div>
   <h1>{{ 'demo.heading' | translate }}</h1>
 
   <!-- translation: translation pipe -->
@@ -24,7 +20,17 @@
 <!-- translation: directive (key as content of element)-->
 <p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>
 
+<br>
+<br>
+<br>
 
-<button (click)="useLanguage('en')">En</button>
-<button (click)="useLanguage('es')">es</button>
-<button (click)="useLanguage('es-419')">Es-419</button>
+
+<button (click)="useLanguage('en')">en</button>
+<button (click)="useLanguage('es-MX')">Español - CDMX</button>
+<button (click)="useLanguage('es-PE')">Español - Peru</button>
+
+<br>
+<br>
+<br>
+
+Fuente de Lenguajes: <a href="https://es.wikipedia.org/wiki/ISO_3166-1_alfa-2">Lenguajes</a>
